@@ -1,0 +1,20 @@
+ @for (checkbox of checkboxes; track $index) {
+  <app-nested-checkbox [checkbox]="checkbox"/>
+}
+
+<app-otp-input [otpInputs]="otpInputs"/> 
+<app-auto-complete-search/>
+
+<app-file-path [filePathData]="filePathData"></app-file-path>
+
+<input type="text" name="" id="" [formControl]="searchText">
+
+@for(item  of filteredTexts; track $index) {
+  <p>{{item}}</p>
+}
+
+<p 
+  *renderWhen="true" 
+  trackVisibility 
+  (visibleForThreeSeconds)="onTrackVisibilityChanged()"
+></p>

@@ -1,0 +1,20 @@
+<div class="mb-10">
+    <input 
+        type="checkbox" 
+        class="fancy-checkbox" 
+        [id]="checkbox.id" 
+        (change)="toggleCheckbox(checkbox)" 
+        [(ngModel)]="checkbox.checked"
+    >
+    <label [for]="checkbox.id">{{checkbox.name}}</label>
+</div>
+@if (checkbox.children?.length) {
+    <div class="ml-20">
+        @for (childCheckbox of checkbox.children; track $index) {
+            <app-nested-checkbox
+                [checkbox]="childCheckbox"
+                (updateParent)="updateParentCheckbox()"
+            />
+        }
+    </div>
+}

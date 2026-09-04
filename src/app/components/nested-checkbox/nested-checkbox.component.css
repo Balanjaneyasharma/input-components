@@ -1,0 +1,75 @@
+/* /* .ml-20 {
+    margin-left: 20px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+} */
+.fancy-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4c7df0;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.25s ease;
+    display: grid;
+    place-content: center;
+  }
+  
+  .fancy-checkbox::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 12px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg) scale(0);
+    transform-origin: bottom right;
+    opacity: 0;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  
+  .fancy-checkbox:checked {
+    background-color: #4c7df0;
+  }
+  
+  .fancy-checkbox:checked::before {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+    animation: check-mark 0.25s ease-out forwards;
+  }
+  
+  @keyframes check-mark {
+    0% {
+      transform: rotate(0) scale(0);
+    }
+    50% {
+      transform: rotate(30deg) scale(0.5);
+    }
+    100% {
+      transform: rotate(45deg) scale(1);
+    }
+  }
+  
+  
+  .mb-10 {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Indentation for nested levels */
+  .ml-20 {
+    margin-left: 20px;
+    border-left: 1px dashed #e0e0e0;
+    padding-left: 12px;
+  }
+    
