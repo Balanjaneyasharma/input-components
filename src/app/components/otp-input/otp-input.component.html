@@ -1,0 +1,12 @@
+@for (otpInput  of otpInputs.controls; track $index) {
+    <input 
+        type="text"
+        #otpInputBox
+        class="otp-input" 
+        [formControl]="otpInput"
+        (keypress)="allowOnlyNumbers($event)"
+        (input)="onOtpInput($event, $index)"
+        (keydown)="onOtpKeyDown($event, $index)"
+        (paste)="onOtpPaste($event, $index)"
+    >
+}

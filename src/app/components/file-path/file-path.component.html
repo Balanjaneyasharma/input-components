@@ -1,0 +1,18 @@
+@for (filePath of filePathData; track $index) {
+    <p>{{filePath.name}}</p>
+      @if(filePath.files?.length) {
+            <button
+                *ngIf="!isDirectoryOpen.get(filePath.id); else openTemplate"
+                (click)="setIsDirectoryOpen(filePath.id, true)"
+            >
+                >
+            </button>
+            <ng-template #openTemplate>
+                <button (click)="setIsDirectoryOpen(filePath.id, false)">v</button>
+                @for (item of filePath.files; track $index) {
+                    <p>{{item.name}}</p>
+                }
+            </ng-template>
+      }
+    
+}
